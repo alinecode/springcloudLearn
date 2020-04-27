@@ -24,6 +24,6 @@ public class ConsumerController {
     @GetMapping(path = "/consumerHello")
     public String helloConsumer(HttpServletRequest request){
         //logger.info("this is consumerHello");
-      return   helloService.helloworld(request);
+      return helloService.helloworld(request);
     }
 }

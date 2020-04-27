@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  */
 @Service
-@FeignClient(name = "hello-service666") // 调用的注册client名称
+@FeignClient(name = "hello-service666" ,fallbackFactory = HelloFailFactory.class) // 调用的注册client名称
 public interface HelloService {
     @RequestMapping("/hello2") // 该client下的controller，这里可以使用springMvc注解
     String helloworld(@RequestHeader HttpServletRequest request); // 参数
