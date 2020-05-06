@@ -11,6 +11,10 @@ public class HelloController {
     @RequestMapping(path = "/hello2")
     public String index(){
       //  logger.info("this is "+request.getRequestURI());
+    	
+//    	int i = 1/0;
+//    	System.err.println(i);
+    	
         return "HelloWorld666";
     }
 }
