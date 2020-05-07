@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
+ * 生成demo https://start.spring.io/ 
+ * 
  * cloud api https://cloud.spring.io/spring-cloud-static/Greenwich.M3/multi/multi_spring-cloud.html
  * 
  * Eureka官方简介 https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance
@@ -34,9 +36,9 @@ public class EurekaServerApplication {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            super.configure(http);
-//            http.csrf().disable();
-            http.csrf().ignoringAntMatchers("/eureka/**");
+            super.configure(http); // 密码验证服务等
+//            http.csrf().disable();  // 关闭csrf
+            http.csrf().ignoringAntMatchers("/eureka/**"); // 仅忽略关闭特定的url的csrf
         }
     }
     
